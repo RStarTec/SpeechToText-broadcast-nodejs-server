@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>SpeechToText Broadcast</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
+
+  <body>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>            
+    <script>
+      // Replace the following url with a custom url
+      var socket = io.connect('http://STTBroadcast.mybluemix.net/');
+      var cumulativeData = '';
+      socket.on('server', function(data) {
+      	// Server provided message. Display it on browser
+      	$('#status').text(data);
+      });
+      
+      socket.on('interim', function(data) {
+      	// Extract out the transcript from the JSON object
+        var result = data.results[data.results.length - 1];
+        var transcript = result.alternatives[0].transcript;
+        if (result.final) {
+          // Add result to the cumulative data
+          // Print the transcript on screen
+          if (cumulativeData.length>500 || cumulativeData.length===0) {
+            // Reset the cumulative data if the length has exceeded 500 characters.
+            cumulativeData = transcript.trim() + '. ';
+          }
+          else {
+        	cumulativeData = cumulativeData + transcript.trim() + '. ';
+          }        	
+          $('#transcript').text(cumulativeData);
+        }
+        else {
+          // Not final yet.
+          $('#transcript').text(cumulativeData + transcript);
+        }
+      });
+    </script>
+    
+    <table>
+      <tr>
+        <td style= "width:30%;">
+          <img class = "newappIcon" src="images/ic_carrot.png">
+        <td>
+          <h1>SpeechToText Broadcast</h1>
+          <div id="status"></div>
+          <div id="transcript"></div>
+    </table>
+
+  </body>
+
+</html>
