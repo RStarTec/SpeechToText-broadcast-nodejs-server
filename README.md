@@ -44,7 +44,7 @@ as receiver.
 
 ### Source code
 
-- Server: https://hub.jazz.net/project/wrstar/SpeechToText-broadcast/overview
+- Server: https://hub.jazz.net/project/wrstar/SpeechToText-broadcast/overview or https://github.com/RStarTec/SpeechToText-broadcast-nodejs-server
 - Android client: https://github.com/RStarTec/SpeechToTextBroadcaster-Android
 - Google Glass client: https://github.com/RStarTec/SpeechToTextReceiver-GoogleGlass
 
