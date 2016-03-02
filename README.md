@@ -16,7 +16,7 @@ be described shortly.
 This project uses the Watson Speech-To-Text (STT) service as its backbone. 
 
 ### Server
-The server acts as the mediater between the clients and the STT service. Audio received from 
+The server acts as the mediator between the clients and the STT service. Audio received from 
 the client (in the recorder role) is passed on to the STT service. When transcription result 
 is available from the STT service, the server broadcasts the result to all clients.
 
@@ -56,7 +56,7 @@ as receiver.
 ### Terms of Use
 
 This project is under the Apache2 license. 
-The author(s) intended this project for benefitial uses in society and would appreciate this 
+The author(s) intended this project for beneficial uses in society and would appreciate this 
 wish to be respected.
 
 ### Contact
