@@ -50,8 +50,7 @@ as receiver.
 
 ### TODO
 
-1. Processing of role requests may have to be done pre-emptively at the server to prevent racing
-2. Current support for mobile clients is limited to Android devices. An iOS client may be developed.
+1. Current support for mobile clients is limited to Android devices. An iOS client may be developed.
 
 ### Terms of Use
 
