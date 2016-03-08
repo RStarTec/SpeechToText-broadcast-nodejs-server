@@ -1,3 +1,4 @@
+![System diagram](SpeechToTextBroadcaster.png)
 
 ### Purpose
 
